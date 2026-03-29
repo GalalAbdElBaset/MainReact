@@ -36,7 +36,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -108,7 +107,7 @@ const Contact = () => {
       icon: <FaMapMarkerAlt />,
       title: "موقعنا",
       info: "مصر، القاهرة",
-      link: "https://maps.google.com/?q=Cairo,Egypt" // ✅ Fixed: replaced "#" with real map link
+      link: "https://maps.google.com/?q=Cairo+Egypt"
     }
   ];
 
@@ -128,13 +127,12 @@ const Contact = () => {
           font-family: 'Segoe UI', 'Tajawal', system-ui, sans-serif;
         }
 
-        /* Fixed WhatsApp Button */
         .whatsapp-fixed {
           position: fixed;
           bottom: 25px;
           right: 25px;
           z-index: 1000;
-          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          background: linear-gradient(135deg, #25D366, #075E54);
           color: white;
           width: 55px;
           height: 55px;
@@ -144,20 +142,20 @@ const Contact = () => {
           justify-content: center;
           font-size: 1.8rem;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
           animation: pulse 2s infinite;
           text-decoration: none;
         }
 
         .whatsapp-fixed:hover {
           transform: scale(1.1);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+          box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes pulse {
-          0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-          70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+          0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+          70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         .contact-container {
@@ -177,7 +175,6 @@ const Contact = () => {
           }
         }
 
-        /* Header */
         .contact-header {
           text-align: center;
           margin-bottom: 2rem;
@@ -200,7 +197,6 @@ const Contact = () => {
           margin: 0 auto;
         }
 
-        /* Grid */
         .contact-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -215,7 +211,6 @@ const Contact = () => {
           }
         }
 
-        /* Cards */
         .contact-info-section,
         .contact-form-section,
         .chatbot-section {
@@ -234,7 +229,6 @@ const Contact = () => {
           text-align: center;
         }
 
-        /* Info Cards */
         .info-cards {
           display: flex;
           flex-direction: column;
@@ -282,7 +276,6 @@ const Contact = () => {
           color: white;
         }
 
-        /* Form */
         .form-group {
           margin-bottom: 0.8rem;
         }
@@ -345,7 +338,6 @@ const Contact = () => {
           cursor: not-allowed;
         }
 
-        /* Chatbot */
         .chatbot-card {
           background: rgba(255,255,255,0.05);
           border-radius: 0.8rem;
@@ -441,7 +433,6 @@ const Contact = () => {
           transform: translateY(-2px);
         }
 
-        /* Success Message */
         .success-message {
           background: rgba(16, 185, 129, 0.2);
           border: 1px solid #10b981;
@@ -455,7 +446,6 @@ const Contact = () => {
           font-size: 0.8rem;
         }
 
-        /* Social Links */
         .social-links {
           display: flex;
           justify-content: center;
@@ -482,7 +472,6 @@ const Contact = () => {
           transform: translateY(-2px);
         }
 
-        /* Map Section */
         .map-section {
           background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(6,182,212,0.1));
           backdrop-filter: blur(10px);
@@ -504,7 +493,6 @@ const Contact = () => {
           font-size: 0.8rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
           .whatsapp-fixed {
             width: 45px;
@@ -520,9 +508,8 @@ const Contact = () => {
         }
       `}</style>
 
-      {/* Fixed WhatsApp Button */}
       <a 
-        href="https://wa.me/201234567890?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9"
+        href="https://wa.me/201234567890"
         className="whatsapp-fixed"
         target="_blank"
         rel="noopener noreferrer"
@@ -532,15 +519,12 @@ const Contact = () => {
 
       <div className="contact-page">
         <div className="contact-container">
-          {/* Header */}
           <div className="contact-header">
             <h1>تواصل معنا</h1>
             <p>نسعد بتواصلك معنا! فريقنا جاهز للرد على استفساراتك</p>
           </div>
 
-          {/* Contact Grid */}
           <div className="contact-grid">
-            {/* Contact Info Section */}
             <div className="contact-info-section">
               <h2 className="section-title">معلومات التواصل</h2>
               <div className="info-cards">
@@ -561,7 +545,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Working Hours */}
               <div className="info-card" style={{ marginTop: '0.5rem', cursor: 'default' }}>
                 <div className="info-icon"><FaClock /></div>
                 <div className="info-content">
@@ -570,7 +553,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* ✅ Fixed Social Links - replaced # with real URLs */}
+              {/* ✅ روابط السوشيال ميديا - تم إزالة href="#" نهائياً */}
               <div className="social-links">
                 <a href="https://www.facebook.com/medsolutions" className="social-link" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
                 <a href="https://www.instagram.com/medsolutions" className="social-link" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
@@ -579,7 +562,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="contact-form-section">
               <h2 className="section-title">أرسل لنا رسالة</h2>
               {submitSuccess && (
@@ -616,7 +598,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Chatbot Section */}
           <div className="chatbot-section" style={{ marginBottom: '1.5rem' }}>
             <div className="chatbot-card">
               <div className="chatbot-header">
@@ -647,7 +628,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Map Section */}
           <div className="map-section">
             <div className="map-placeholder">
               <p>📍 القاهرة، مصر - برج النيل، الدور 15</p>
