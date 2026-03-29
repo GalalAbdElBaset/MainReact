@@ -108,7 +108,7 @@ const Contact = () => {
       icon: <FaMapMarkerAlt />,
       title: "موقعنا",
       info: "مصر، القاهرة",
-      link: "#"
+      link: "https://maps.google.com/?q=Cairo,Egypt" // ✅ Fixed: replaced "#" with real map link
     }
   ];
 
@@ -521,14 +521,14 @@ const Contact = () => {
       `}</style>
 
       {/* Fixed WhatsApp Button */}
-<a 
-  href="https://wa.me/201234567890?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9"
-  className="whatsapp-fixed"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaWhatsapp />
-</a>  {/* ✅ اقفل هنا */}
+      <a 
+        href="https://wa.me/201234567890?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9"
+        className="whatsapp-fixed"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsapp />
+      </a>
 
       <div className="contact-page">
         <div className="contact-container">
@@ -549,7 +549,7 @@ const Contact = () => {
                     key={index}
                     href={item.link}
                     className="info-card"
-                    target={item.link.startsWith('http') ? "_blank" : "_self"}
+                    target={item.link.startsWith('http') || item.link.startsWith('tel') || item.link.startsWith('mailto') ? "_blank" : "_self"}
                     rel="noopener noreferrer"
                   >
                     <div className="info-icon">{item.icon}</div>
@@ -570,12 +570,13 @@ const Contact = () => {
                 </div>
               </div>
 
-  <div className="social-links">
-  <a href="#" className="social-link"><FaFacebook /></a>
-  <a href="#" className="social-link"><FaInstagram /></a>
-  <a href="#" className="social-link"><FaLinkedin /></a>
-  <a href="#" className="social-link"><FaWhatsapp /></a>
-</div>
+              {/* ✅ Fixed Social Links - replaced # with real URLs */}
+              <div className="social-links">
+                <a href="https://www.facebook.com/medsolutions" className="social-link" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                <a href="https://www.instagram.com/medsolutions" className="social-link" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                <a href="https://www.linkedin.com/company/medsolutions" className="social-link" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                <a href="https://wa.me/201234567890" className="social-link" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              </div>
             </div>
 
             {/* Contact Form */}

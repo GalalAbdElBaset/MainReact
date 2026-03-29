@@ -22,7 +22,7 @@ const Services = () => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   // Service Categories
   const serviceCategories = [
